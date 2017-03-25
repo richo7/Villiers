@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<h3 class="warning">Maths does not have coursework! So go back to the computing page.</h3>
+<p>This is the Javascript using two methods one being one that accelerates the further away it is and the other at a constant rate.</p>
+<script type="text/javascript">
+
+
+
+
+var followCursor = (function() {
+  var s = document.createElement('div');
+  s.style.position = 'absolute';
+  s.style.margin = '0';
+  s.style.padding = '5px';
+  s.style.border = '1px solid blue';
+ 
+
+  var f = document.createElement('div');
+  f.style.position = 'absolute';
+  f.style.margin = '0';
+  f.style.padding = '5px';
+  f.style.border = '1px solid green';
+  f.style.left= "100%"
+
+  return {
+    init: function() {
+      document.body.appendChild(s);
+	        document.body.appendChild(f);
+    },
+
+    run: function(e,a,b) {
+        var x = s.offsetLeft, y = s.offsetTop;
+		var a = e.clientX ;
+	    var b = e.clientY ;
+      s.style.left  = (x+((a-x))/20) + 'px';
+      s.style.top = (y+((b-y))/20) + 'px';
+        var h = f.offsetLeft, i = f.offsetTop
+		g = (a-h)*(a-h)+(b-i)*(b-i)
+		g=g/9
+		j= g
+		if (h > a)		{
+		g=g*-1
+		}
+		if (i > b) {
+			 j=j*-1
+		}
+
+
+		f.style.left = (h+((a-h)*(a-h))/g) + 'px' ;
+		f.style.top = (i+((b-i)*(b-i))/j) + 'px' ;
+		
+    }
+  };
+}());
+
+window.onload = function() {
+  followCursor.init();
+  document.body.onmousemove = followCursor.run;
+}
+
+</script>
+
+<div id="msg" style="width: 100%; height: 100%;"></div>

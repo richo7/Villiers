@@ -1,0 +1,61 @@
+*{
+font-family: Tahoma;	
+}
+.main{
+	background-color: #A02626;
+	height: 100%;
+	width:100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    display: block;
+}
+
+
+li a {
+    display: block;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.yes :hover {
+    background-color: #fff;
+    color: blue;
+}
+.no :hover {
+	color: red;
+	background-color: red;
+}
+.warning {
+	font-size: 70;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #0B0462;
+    height: 100%;
+    position: fixed; 
+    overflow: auto; 
+	font-size:45;
+}
+.main {
+	padding:5% 0% 0% 25%;
+	width : 75%;
+	color: white;
+}
+h1{
+	font-size: 50;
+
+}
+p{
+	font-size: 30;
+}
